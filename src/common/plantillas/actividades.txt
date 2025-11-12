@@ -1,0 +1,36 @@
+🔐 1. Implementar autenticación (Login/Registro)
+Esto es crítico para proteger tu sistema. Puedes usar bcrypt para el hash de contraseñas y jsonwebtoken (JWT) para autenticar.
+
+    Endpoint de login para verificar credenciales y devolver un token.
+
+    Middleware para proteger rutas privadas (por tipo de usuario si es prestamista o prestatario).
+
+📦 2. Conectar relaciones
+    Ejemplo: mostrar ciudad → barrios → direcciones → usuarios. Esto implica usar JOINs para obtener datos relacionados en los endpoints.
+
+🔎 3. Buscar ofertas disponibles
+    Un endpoint tipo GET /ofertas-disponibles que devuelva todas las ofertas activas con detalles del prestamista (nombre, rango, capital disponible).
+
+🤝 4. Flujo de préstamo
+Este sería el núcleo de Findex:
+
+    Endpoint para que el prestatario acepte una oferta (crear un prestamo).
+
+    Validar que el prestamista tenga suficiente capital.
+
+    Reducir el capital disponible después del préstamo.
+
+📅 5. Simulación de pagos
+    Generar calendario de pagos desde fecha_inicio y frecuencia.
+
+    Registrar pagos en la tabla pago.
+
+    Validar si ya terminó el préstamo.
+
+📊 6. Panel de control para cada tipo de usuario
+    Prestamista: ver sus préstamos activos, pagos recibidos, capital restante.
+
+    Prestatario: ver sus préstamos, cuotas pendientes, historial de pagos.
+
+
+

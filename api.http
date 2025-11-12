@@ -1,0 +1,459 @@
+###APIS QUE SE SIRVEN A LA APLICACION FRONTEND
+### Login
+POST http://localhost:3000/auth/login
+Content-Type: application/json
+
+{
+  "email": "triunix@gmail.com",
+  "contraseña": "kevinquiroz1234567890"
+}
+
+
+### Registro
+POST http://localhost:3000/auth/registrar
+Content-Type: application/json
+
+{
+  "email": "kevin@gmail.com",
+  "contraseña": "merotravez123456"
+}
+
+
+### Ofertas de prestamos para el Feid
+Get http://localhost:3000/oferta-prestamo/feed
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjIzLCJ0aXBvIjozLCJpYXQiOjE3NTIxMDQwODMsImV4cCI6MTc1MjExMTI4M30.HQngiKqlU6BWXpvu7zmmppTyiPIVQweR21HUvwJ6wU8
+
+
+
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+#
+
+
+#RUTAS SOLO PARA DESARROLLO PRUEVAS DE LA APLICACION 
+#########################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################################
+### CONSULTAR TODOS LOS REGISTROS,TODOS LOS GETS
+
+### Barrios Por Ciudad
+GET http://localhost:3000/barrio/ciudad/2
+
+### Usuarios Detallados
+GET http://localhost:3000/usuario/detallado/23
+### Usuarios
+GET http://localhost:3000/usuario
+### Prestatarios
+GET http://localhost:3000/prestatario
+### Prestamistas
+GET http://localhost:3000/prestamista
+### Ofertas de Prestamo
+GET http://localhost:3000/oferta-prestamo
+### Prestamos
+GET http://localhost:3000/prestamo
+### Pagos
+GET http://localhost:3000/pago
+### Tipos de Usuario
+GET http://localhost:3000/tipo-usuario
+### Rangos
+GET http://localhost:3000/rango
+### Ciudades
+GET http://localhost:3000/ciudad
+### Barrios
+GET http://localhost:3000/barrio
+### Direcciones
+GET http://localhost:3000/direccion
+### Frecuencia de Pago
+GET http://localhost:3000/frecuencia-pago
+### Metodo de Pago
+GET http://localhost:3000/metodo-pago
+
+
+
+#######################################################################################################################
+#######################################################################################################################
+#######################################################################################################################
+### CONSULTAR UN REGISTRO POR ID: GETS
+### Usuarios
+GET http://localhost:3000/usuario/21
+### Prestatarios
+GET http://localhost:3000/prestatario/11
+### Prestamistas
+GET http://localhost:3000/prestamista/1
+### Ofertas de Prestamo
+GET http://localhost:3000/oferta-prestamo/9
+### Prestamos
+GET http://localhost:3000/prestamo/prestamos/33
+### Pagos
+GET http://localhost:3000/pago/1
+### Tipos de Usuario
+GET http://localhost:3000/tipo-usuario/1
+### Rangos
+GET http://localhost:3000/rango/1
+### Ciudades
+GET http://localhost:3000/ciudad/1
+### Barrios
+GET http://localhost:3000/barrio/1
+### Direcciones
+GET http://localhost:3000/direccion/1
+### Frecuencia de Pago
+GET http://localhost:3000/frecuencia-pago/1
+### Metodo de Pago
+GET http://localhost:3000/metodo-pago/1 
+
+
+#######################################################################################################################
+#######################################################################################################################
+#######################################################################################################################
+### CREAR UN NUEVO REGISTRO: POSTS
+
+
+
+### Usuarios
+POST http://localhost:3000/usuario
+Content-Type: application/json
+
+{
+  "nombre": "Kevin Quiroz",
+  "apellido": "Perez",
+  "fecha_nacimiento": "1990-01-01",
+  "telefono": "+593-123456789",
+  "id_direccion": 1,
+  "email": "juan.perez@example.com",
+  "contraseña": "hashed_password",
+  "fecha_registro": "2023-01-01",
+  "id_tipo": 1,
+  "estado": true
+}
+### Prestatarios
+POST http://localhost:3000/prestatario
+Content-Type: application/json
+
+  {
+    "id_prestatario": 1,
+    "nombre_negocio": "Negocio de Prueba",
+    "id_direccion": 1,
+    "ingreso_mensual": 1800,
+    "calificacion_crediticia": 5,
+    "estado": true
+  }
+
+### Prestamistas
+POST http://localhost:3000/prestamista
+Content-Type: application/json
+
+{
+  "id_prestamista": 21,
+  "capital": 10000,
+  "id_rango": 1,
+  "estado": true
+}
+
+### Ofertas de Prestamo
+POST http://localhost:3000/oferta-prestamo
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjIzLCJ0aXBvIjozLCJpYXQiOjE3NTE2NzkzODcsImV4cCI6MTc1MTY4NjU4N30.MMhJN6FcMTsCtuyl0ZnCheCaNTT8iWmHgZNNd2rcw24
+
+{
+  "id_prestamista": 21,
+  "codigo_oferta": "OFERTA126",
+  "monto": 1000,
+  "tasa_interes": 10,
+  "id_frecuencia": 1,
+  "nro_cuotas": 12,
+  "monto_cuota": 100,
+  "fecha_publicacion": "2023-01-01",
+  "estado": true
+}
+
+### Prestamos
+POST http://localhost:3000/prestamo
+Content-Type: application/json
+
+{
+  "id_oferta": 1,
+  "id_prestatario": 1,
+  "fecha_inicio": "2023-01-01",
+  "fecha_fin": "2023-01-01",
+  "estado": true
+}
+
+### Pagos
+POST http://localhost:3000/pago
+Content-Type: application/json
+
+{
+  "id_prestamo": 1,
+  "fecha_pago": "2023-02-01",
+  "monto_pagado": 100,
+  "id_metodo": 1,
+  "comprobante_url": "http://example.com/comprobante.jpg",
+  "estado": true
+}
+
+### Tipos de Usuario
+POST http://localhost:3000/tipo-usuario
+Content-Type: application/json
+
+{
+  "tipo": "Administrador",
+  "estado": true
+
+}
+
+### Rangos
+POST http://localhost:3000/rango
+Content-Type: application/json
+
+{
+  "rango": "Oro",
+  "estado": true
+}
+
+### Ciudades
+POST http://localhost:3000/ciudad
+Content-Type: application/json
+
+{
+  "nombre_ciudad": "Pedernales",
+  "estado": true
+}
+
+### Barrios
+POST http://localhost:3000/barrio
+Content-Type: application/json
+
+{
+  "id_ciudad": 3,
+  "nombre_barrio": "Centro",
+  "estado": true
+}
+
+### Direcciones
+POST http://localhost:3000/direccion
+Content-Type: application/json
+
+{
+  "id_barrio": 1,
+  "calle1": "Av. Siempre Viva",
+  "calle2": "Calle Falsa",
+  "estado": true
+}
+
+### Frecuencia de Pago
+POST http://localhost:3000/frecuencia-pago
+Content-Type: application/json
+
+{
+  "frecuencia_pago": "Mensual",
+  "estado": true
+}
+
+### Metodo de Pago
+POST http://localhost:3000/metodo-pago
+Content-Type: application/json
+
+{
+  "metodo": "Trueque",
+  "estado": true
+}
+
+#######################################################################################################################
+#######################################################################################################################
+#######################################################################################################################
+### ACTUALIZAR REGISTROS: PUT
+
+### Usuarios
+PUT http://localhost:3000/usuario
+Content-Type: application/json
+
+{
+  "telefono": "+593-123456789",
+  "id_direccion": 1,
+  "email": "juan.perez@example.com",
+  "contraseña": "hashed_password",
+  "estado": true
+}
+### Prestatarios
+PUT http://localhost:3000/prestatario
+Content-Type: application/json
+
+  {
+    "nombre_negocio": "Negocio de Prueba",
+    "id_direccion": 1,
+    "ingreso_mensual": 1800,
+    "calificacion_crediticia": 5,
+    "estado": true
+  }
+
+### Prestamistas
+PUT http://localhost:3000/prestamista
+Content-Type: application/json
+
+{
+  "capital": 10000,
+  "id_rango": 1,
+  "estado": true
+}
+
+### Ofertas de Prestamo
+PUT http://localhost:3000/oferta-prestamo
+Content-Type: application/json
+
+{
+  "monto": 1000,
+  "tasa_interes": 10,
+  "id_frecuencia": 1,
+  "nro_cuotas": 12,
+  "monto_cuota": 100,
+  "estado": true
+}
+
+### Prestamos
+PUT http://localhost:3000/prestamo
+Content-Type: application/json
+
+{
+  "fecha_inicio": "2023-01-01",
+  "fecha_fin": "2023-01-01",
+  "estado": true
+}
+
+### Pagos
+PUT http://localhost:3000/pago
+Content-Type: application/json
+
+{
+  "monto_pagado": 100,
+  "id_metodo": 1,
+  "comprobante_url": "http://example.com/comprobante.jpg",
+  "estado": true
+}
+
+### Tipos de Usuario
+PUT http://localhost:3000/tipo-usuario
+Content-Type: application/json
+
+{
+  "tipo": "Administrador",
+  "estado": true
+
+}
+
+### Rangos
+PUT http://localhost:3000/rango
+Content-Type: application/json
+
+{
+  "rango": "Oro",
+  "estado": true
+}
+
+### Ciudades
+PUT http://localhost:3000/ciudad
+Content-Type: application/json
+
+{
+  "nombre_ciudad": "Pedernales",
+  "estado": true
+}
+
+### Barrios
+PUT http://localhost:3000/barrio
+Content-Type: application/json
+
+{
+  "id_ciudad": 3,
+  "nombre_barrio": "Centro",
+  "estado": true
+}
+
+### Direcciones
+PUT http://localhost:3000/direccion
+Content-Type: application/json
+
+{
+  "calle1": "Av. Siempre Viva",
+  "calle2": "Calle Falsa",
+  "estado": true
+}
+
+### Frecuencia de Pago
+PUT http://localhost:3000/frecuencia-pago
+Content-Type: application/json
+
+{
+  "frecuencia_pago": "Mensual",
+  "estado": true
+}
+
+### Metodo de Pago
+PUT http://localhost:3000/metodo-pago
+Content-Type: application/json
+
+{
+  "metodo": "Transferencia Bancaria",
+  "estado": true
+}
+
+#######################################################################################################################
+#######################################################################################################################
+#######################################################################################################################
+### ELIMINAR REGISTROS: DELETE
+
+### Usuarios
+DELETE http://localhost:3000/usuario/1
+
+### Prestatarios
+DELETE http://localhost:3000/prestatario/1
+
+### Prestamistas
+DELETE http://localhost:3000/prestamista/1
+
+### Ofertas de Prestamo
+DELETE http://localhost:3000/oferta-prestamo/1
+
+### Prestamos
+DELETE http://localhost:3000/prestamo/1
+
+### Pagos
+DELETE http://localhost:3000/pago/1
+
+### Tipos de Usuario
+DELETE http://localhost:3000/tipo-usuario/1
+
+### Rangos
+DELETE http://localhost:3000/rango/1
+
+### Ciudades
+DELETE http://localhost:3000/ciudad/1
+
+### Barrios
+DELETE http://localhost:3000/barrio/1
+
+### Direcciones
+DELETE http://localhost:3000/direccion/1
+
+### Frecuencia de Pago
+DELETE http://localhost:3000/frecuencia-pago/1
+
+### Metodo de Pago
+DELETE http://localhost:3000/metodo-pago/1
