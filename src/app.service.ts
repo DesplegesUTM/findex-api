@@ -6,20 +6,20 @@ export class AppService {
     return {
       app_name: 'App Findex',
       app_endpoints: [
+        '/usuarios',
         '/prestamista',
-        '/direccion',
-        '/frecuencia-pago',
         '/prestatario',
-        '/metodo-pago',
+        '/oferta-prestamo',
+        '/prestamo',
+        '/tipo-usuario',
         '/rango',
         '/ciudad',
         '/barrio',
-        '/pago',
+        '/direccion',
+        '/frecuencia-pago',
+        '/metodo-pago',
         '/solicitud-prestamo',
-        '/oferta-prestamo',
-        '/usuarios',
-        '/prestamo',
-        '/tipo-usuario',
+        '/pago',
       ]
     };
   }
